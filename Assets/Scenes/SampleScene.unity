@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52408834}
+  - component: {fileID: 52408835}
   m_Layer: 0
   m_Name: Spawn_position_1
   m_TagString: Untagged
@@ -154,6 +155,24 @@ Transform:
   - {fileID: 336640707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52408835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52408833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b500653d291fc4fb8c5b54c4be40aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorChanger: {fileID: 312853924}
+  _prefab: {fileID: -4509618959792087804, guid: d611e070c356f6149bb90cdc444af0a1, type: 3}
+  _poolCapasity: 50
+  _poolMaxSize: 100
+  _target: {fileID: 1830461559}
+  _color: {r: 0.8584906, g: 0, b: 0, a: 0}
 --- !u!1 &92085146
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +456,6 @@ GameObject:
   - component: {fileID: 312853926}
   - component: {fileID: 312853925}
   - component: {fileID: 312853924}
-  - component: {fileID: 312853923}
   m_Layer: 0
   m_Name: scripts
   m_TagString: Untagged
@@ -445,22 +463,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &312853923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312853922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b500653d291fc4fb8c5b54c4be40aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorChanger: {fileID: 312853924}
-  _prefab: {fileID: -4509618959792087804, guid: d611e070c356f6149bb90cdc444af0a1, type: 3}
-  _poolCapasity: 50
-  _poolMaxSize: 100
 --- !u!114 &312853924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,13 +487,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075386a08af7ac140a1e49843b91a6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawner: {fileID: 312853923}
+  _spawners:
+  - {fileID: 52408835}
+  - {fileID: 846896970}
+  - {fileID: 1193923876}
+  - {fileID: 824120887}
   _spawnInterval: 2
-  _positions:
-  - {fileID: 52408834}
-  - {fileID: 846896969}
-  - {fileID: 1193923875}
-  - {fileID: 824120886}
 --- !u!4 &312853926
 Transform:
   m_ObjectHideFlags: 0
@@ -833,6 +834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824120886}
+  - component: {fileID: 824120887}
   m_Layer: 0
   m_Name: Spawn_position_4
   m_TagString: Untagged
@@ -856,6 +858,24 @@ Transform:
   - {fileID: 2139683737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824120887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824120885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b500653d291fc4fb8c5b54c4be40aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorChanger: {fileID: 312853924}
+  _prefab: {fileID: -4509618959792087804, guid: d611e070c356f6149bb90cdc444af0a1, type: 3}
+  _poolCapasity: 50
+  _poolMaxSize: 100
+  _target: {fileID: 1275492574}
+  _color: {r: 0.8867924, g: 0.8589256, b: 0, a: 0}
 --- !u!1 &832123053
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 846896969}
+  - component: {fileID: 846896970}
   m_Layer: 0
   m_Name: Spawn_position_2
   m_TagString: Untagged
@@ -1006,6 +1027,24 @@ Transform:
   - {fileID: 169272997}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &846896970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846896968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b500653d291fc4fb8c5b54c4be40aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorChanger: {fileID: 312853924}
+  _prefab: {fileID: -4509618959792087804, guid: d611e070c356f6149bb90cdc444af0a1, type: 3}
+  _poolCapasity: 50
+  _poolMaxSize: 100
+  _target: {fileID: 138986032}
+  _color: {r: 0, g: 0.084820986, b: 1, a: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1193923875}
+  - component: {fileID: 1193923876}
   m_Layer: 0
   m_Name: Spawn_position_3
   m_TagString: Untagged
@@ -1130,6 +1170,24 @@ Transform:
   - {fileID: 2073923761}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193923876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193923874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b500653d291fc4fb8c5b54c4be40aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorChanger: {fileID: 312853924}
+  _prefab: {fileID: -4509618959792087804, guid: d611e070c356f6149bb90cdc444af0a1, type: 3}
+  _poolCapasity: 50
+  _poolMaxSize: 100
+  _target: {fileID: 1872334863}
+  _color: {r: 0.16560216, g: 0.8396226, b: 0, a: 0}
 --- !u!1 &1275492570
 GameObject:
   m_ObjectHideFlags: 0
