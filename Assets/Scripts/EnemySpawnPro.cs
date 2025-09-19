@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class EnemySpawnPro : MonoBehaviour
 {
-    [SerializeField] private Spawner _spawner;
+    [SerializeField] private List<Spawner> _spawners;
     [SerializeField] private float _spawnInterval = 2f;
-    [SerializeField] private List<Transform> _positions = new();
     private float _timer;
 
     private void Update()
@@ -15,13 +14,13 @@ public class EnemySpawnPro : MonoBehaviour
 
         if (_timer >= _spawnInterval)
         {
-            _spawner.Spawn(PositionSelection());
+            SpawnerSelection().Spawn();
             _timer = 0f;
         }
     }
 
-    private Transform PositionSelection()
+    private Spawner SpawnerSelection()
     {
-        return _positions[Random.Range(0, _positions.Count)];
+        return _spawners[Random.Range(0, _spawners.Count)];
     }
 }

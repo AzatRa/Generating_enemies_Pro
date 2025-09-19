@@ -7,6 +7,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Enemy _prefab;
     [SerializeField] private int _poolCapasity = 50;
     [SerializeField] private int _poolMaxSize = 100;
+    [SerializeField] private Transform _target;
+    [SerializeField] private Color _color;
 
     private ObjectPool<Enemy> _pool;
 
@@ -22,21 +24,22 @@ public class Spawner : MonoBehaviour
             maxSize: _poolMaxSize);
     }
 
-    public void Spawn(Transform transform)
+    public void Spawn()
     {
         float rotationAngle = 360f;
 
         Enemy enemy = _pool.Get();
         enemy.transform.position = transform.position;
         enemy.transform.rotation = Quaternion.Euler(0, Random.Range(0, rotationAngle), 0);
-        _colorChanger.Change(enemy);
+        _colorChanger.Change(enemy, _color);
+        enemy.target = _target;
         enemy.gameObject.SetActive(true);
-        enemy.CollidedWithWall += OnEnemyCollision;
+        enemy.CollidedWithTarget += OnEnemyCollision;
     }
 
     private void OnEnemyCollision(Enemy enemy)
     {
-        enemy.CollidedWithWall -= OnEnemyCollision;
+        enemy.CollidedWithTarget -= OnEnemyCollision;
         _pool.Release(enemy);
     }
 
