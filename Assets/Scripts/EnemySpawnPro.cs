@@ -8,14 +8,17 @@ public class EnemySpawnPro : MonoBehaviour
     [SerializeField] private float _spawnInterval = 2f;
     private float _timer;
 
-    private void Update()
+    private void Start()
     {
-        _timer += Time.deltaTime;
+        StartCoroutine(WaitForSpawn());
+    }
 
-        if (_timer >= _spawnInterval)
+    private IEnumerator WaitForSpawn()
+    {
+        while (true)
         {
+            yield return new WaitForSeconds(_spawnInterval);
             SpawnerSelection().Spawn();
-            _timer = 0f;
         }
     }
 
