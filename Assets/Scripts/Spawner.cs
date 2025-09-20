@@ -28,11 +28,11 @@ public class Spawner : MonoBehaviour
     {
         float rotationAngle = 360f;
 
-        Enemy enemy = _pool.Get();
+        Enemy enemy = Get();
         enemy.transform.position = transform.position;
         enemy.transform.rotation = Quaternion.Euler(0, Random.Range(0, rotationAngle), 0);
         _colorChanger.Change(enemy, _color);
-        enemy.target = _target;
+        enemy.SetTarget(_target);
         enemy.gameObject.SetActive(true);
         enemy.CollidedWithTarget += OnEnemyCollision;
     }
@@ -40,7 +40,7 @@ public class Spawner : MonoBehaviour
     private void OnEnemyCollision(Enemy enemy)
     {
         enemy.CollidedWithTarget -= OnEnemyCollision;
-        _pool.Release(enemy);
+        Release(enemy);
     }
 
     private Enemy Get()

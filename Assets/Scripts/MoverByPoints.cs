@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveByPoints : MonoBehaviour
+public class MoverByPoints : MonoBehaviour
 {
     [SerializeField] private List<Transform> _points = new();
     [SerializeField] private float _speed;

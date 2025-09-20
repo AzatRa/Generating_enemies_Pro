@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
     private Renderer _renderer;
+    private Transform _target;
 
-    public Transform target;
     public event Action<Enemy> CollidedWithTarget;
     public Renderer Renderer => _renderer;
 
@@ -20,8 +20,13 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (_target.position - transform.position).normalized;
         transform.Translate(direction * _speed * Time.deltaTime, Space.World);
+    }
+
+    public void SetTarget(Transform target)
+    {
+        _target = target;
     }
 
     private void OnCollisionEnter(Collision collision)
