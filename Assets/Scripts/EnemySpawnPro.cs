@@ -6,7 +6,6 @@ public class EnemySpawnPro : MonoBehaviour
 {
     [SerializeField] private List<Spawner> _spawners;
     [SerializeField] private float _spawnInterval = 2f;
-    private float _timer;
 
     private void Start()
     {
