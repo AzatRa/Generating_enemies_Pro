@@ -17,11 +17,11 @@ public class EnemySpawnPro : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_spawnInterval);
-            SpawnerSelection().Spawn();
+            SelectSpawner().Spawn();
         }
     }
 
-    private Spawner SpawnerSelection()
+    private Spawner SelectSpawner()
     {
         return _spawners[Random.Range(0, _spawners.Count)];
     }

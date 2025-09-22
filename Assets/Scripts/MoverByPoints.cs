@@ -26,7 +26,7 @@ public class MoverByPoints : MonoBehaviour
     {
         transform.Rotate(Vector3.up * _rotateSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, _nextPoint.position) < _minDistance)
+        if (Vector3Extensions.IsEnoughClose(transform.position, _nextPoint.position, _minDistance))
         {
             _pointsQueue.Enqueue(_nextPoint);
             _nextPoint = _pointsQueue.Dequeue();
@@ -41,3 +41,17 @@ public class MoverByPoints : MonoBehaviour
         transform.Translate(direction * _speed * Time.deltaTime, Space.World);
     }
 }
+
+public static class Vector3Extensions
+{
+    public static float SqrDistance(this Vector3 start, Vector3 end)
+    {
+        return (end - start).sqrMagnitude;
+    }
+
+    public static bool IsEnoughClose(this Vector3 start, Vector3 end, float distance)
+    {
+        return start.SqrDistance(end) <= distance * distance;
+    }
+}
+
